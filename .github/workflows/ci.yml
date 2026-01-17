@@ -1,0 +1,24 @@
+---
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  kubesec-sast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Combine Kubernetes manifests into a single file
+        run: |
+          cat podinfo/base/{deployment,service,hpa}.yaml > all-manifests.yaml
+      - name: Run kubesec scanner
+        uses: controlplaneio/kubesec-action@main
+        with:
+          input: all-manifests.yaml
+          exit-code: "0"
+          format: json
+          output: kubesec-results.json
+      - name: Print Kubesec SAST results
+        run: cat kubesec-results.json
