@@ -2,6 +2,10 @@
 
 Implementing GitOps practices with Argo CD
 
+## Architecture
+
+![Argo CD GitOps demo architecture diagram](./assets/images/01-argocd-gitops-demo-architecture-diagram.png)
+
 ## Dependencies
 
 The reference environment is described below.
