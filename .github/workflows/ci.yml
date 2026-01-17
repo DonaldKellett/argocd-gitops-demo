@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Combine Kubernetes manifests into a single file
         run: |
-          cat podinfo/base/{deployment,service,hpa}.yaml > all-manifests.yaml
+          cat manifests/{application,argocd}.yaml podinfo/base/{deployment,service,hpa}.yaml > all-manifests.yaml
       - name: Run kubesec scanner
         uses: controlplaneio/kubesec-action@main
         with:
