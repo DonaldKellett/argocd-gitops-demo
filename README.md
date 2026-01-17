@@ -23,6 +23,8 @@ Install the following tools:
 
 ## Walkthrough
 
+The Asciicast recording is available on [Asciinema](https://asciinema.org/a/768924).
+
 ![Argo CD GitOps Demo CLI Walkthrough](./assets/images/00-argocd-gitops-demo-cli-walkthrough.gif)
 
 ## Credits
